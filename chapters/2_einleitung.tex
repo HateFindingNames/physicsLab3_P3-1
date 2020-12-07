@@ -7,11 +7,11 @@ of the GMT does not allow to distinguish between types of sources of ionization 
 \(\beta\)- or \(\gamma\)-radiation).\par\medskip
 %
 %
-\section{Half-life time}
+\section{Half-Life Time}
 Radioactive decay is a statistical process. According to quantum physics it is impossible to predict the life span of a
 single atom. Given a significantly large number of atoms one can state the overall time until half of the nuclei present
 at \(t_0\) did disintegrate. Thus, for each radioactive nuclide one can describe a characteristical mean lifespan \(\tau\)\cite{Eichler.2016}\cite{Papula.MatheIngenieure.2018}.\par
-Mathmatically speaking, the amount of decayed radio-nuclides after a time \(t\) can be described as \cref{eq:zerfallsgesetz}.
+Mathmatically speaking, the amount of decayed nuclei after a time \(t\) can be described as \cref{eq:zerfallsgesetz}.
 %
 \begin{equation}
     \dot{N}(t) = -\tau N(t) \quad \Leftrightarrow \quad N(t) = N_0 e^{-\nicefrac{t}{\tau}}
@@ -27,7 +27,7 @@ with
 \end{equation}
 %
 %
-\section{GMT-characteristics}
+\section{GMT-Characteristics}
 %
 %
 The GMT's principle of operation is based around the phenomenon called \textsc{Townsend}-discharge. If the seperated
@@ -57,19 +57,59 @@ there original (maximum) level. In consequence some pulses may be too small for 
 trigger ultimately leading to undesired false-negatives i.e. too low count rate in a highly radiating environment.\par
 %
 %
-\section{Stochastic principles}
+\section{Stochastic Principles}
 Since radioactive decay is a stochastic process, some usefull mathmatic principles need to be discussed.
-\subsection{Binomial distribution}
+\subsection{Binomial Distribution}
 \begin{quote}
     A random experiment with only \textit{two mutually exclusive} results is called \textit{Bernoulli-experiment}\cite{Papula.MatheFormelsammlung.2017}
 \end{quote}
 Given an event has only two possible outcomes - \(A\) or \(\bar{A}\) - with the individual propabilities \(p(A) = 1 - p(\bar{A})\)
-one can express the propability \(P\) for \(k\) successive events \(A\) within \(n\) repetitions as follows:
+one can express the propability \(P\) for \(k\) successive events \(A\) within \(i\) repetitions as follows:
 \begin{equation}
-    P(k) = \binom{n}{k} \cdot p(A)^k \cdot p(\bar{A})^{n-k}
-    \label{eq:wahrscheinlichkeitsfunktion}
+    P(k) = \binom{i}{k} \cdot p(A)^k \cdot p(\bar{A})^{i-k} \qquad \left( x \in \mathbb{N}_0 \right)
+    \label{eq:binomWkt}
 \end{equation}
 Accordingly, the propability for \(k \leq x\) outcomes is expressed as
 \begin{equation}
-    P(k \leq x) = \sum_{k \leq x} \binom{n}{k}p(A)^k \cdot (1-p(A))^{n-k}
+    P(k \leq x) = \sum_{k \leq x} \binom{i}{k}p(A)^k \cdot (1-p(A))^{i-k}
+    \label{eq:binomVerteilung}
+\end{equation}
+and is called the distribution function.
+In other words: summing up all individual propabilities \( P(x_j) \) gives the overall propability \( P \) to
+encounter \textit{any} event out of the set of interest.
+%
+\subsection{\textsc{Poisson}-Distribution}
+%
+To reduce computational effort for large numbers of occurences \( x \) the \textsc{Poisson}-Distribution is often used.
+Assuming an expected amount of \( \lambda \) occurences are expected to take place during a fixed time frame and assumed
+further that each occurence is time independend and independent from each other one can calculate the possibility \( P \)
+for any amount of occurences by
+\begin{equation}
+    P(k) = \frac{\lambda}{x!} \cdot e^{ -\lambda } \qquad \left( x \in \mathbb{N}_0 \right)
+    \label[]{eq:poissonWkt}
+\end{equation}
+Again, \( x \) is the number of occurences of interest, \( \lambda \) the expected number of occurences.\par
+Since the \textsc{Poisson}-Distribution is defined for all \( x \in \mathbb{N}_0 \) the sum of all single propabilities
+\( P(x) \) equals 1. Thus, to get the propability to observe any amount of occurences during that time frame one can simply sum up
+all individual propability as follows
+%
+\begin{equation}
+    P(k \leq x) = e^{ -\lambda } \cdot \sum_{ k \leq x } \frac{\lambda^k}{k!}
+    \label[]{eq:poissonVerteilung}
+\end{equation}
+%
+\subsection{\textsc{Gauss}ian-Distribution}
+%
+Beeing interested in the propability of a distinct value \( x \) out of a continuous spectrum of values \( k \) with the
+expected value \( \lambda \) and the standard deviation \( \sigma \) the \textsc{Gauss}ian- or Normal-Distribution gives
+the propability for the occurence of a value \( x \) by
+%
+\begin{equation}
+    P(k) = \frac{1}{\sqrt{2\pi}\sigma} \cdot e^{ - \frac{1}{2} \left( \frac{x - \mu}{\sigma} \right)^2 } \qquad \left( x \in \mathbb{R} \right)
+    \label[]{gaussWkt}
+\end{equation}
+%
+with the distribution function accordingly
+\begin{equation}
+    P(k \leq x) = \frac{1}{\sqrt{2\pi}\sigma} \cdot \int_{ -\infty }^x e^{ -\frac{1}{2} \left( \frac{x - \mu}{\sigma} \right)^2 } dx
 \end{equation}
