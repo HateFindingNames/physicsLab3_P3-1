@@ -4,7 +4,7 @@
 %
 \subsection{Characteristic values of the oscilloscope}
 %
-The signal of the GMT can be seen on the oscilloscope screen (s. fig.1-5). fig.1 shows us the zero level \(U_{0}\) and
+The signal of the GMT can be seen on the oscilloscope screen. \cref{subfig:fig1pulsAmplitude} shows the base line \(U_{0}\) and
 the amplitude \(\hat{U}\):
 %
 \begin{align}
@@ -12,8 +12,8 @@ U_{0}   &=  \SI{24}{mV} \pm \SI{40}{mV} \\
 \hat{U} &=  \SI{1,56}{V} \pm \SI{0,04}{V}
 \end{align}
 %
-Further there can be read off the fall time \(t_{f}\) (fig.2), rise time \(t_{r}\) (fig.3), the pulse width \(t_{p}\)
-(fig.4) and recovery time \(t_{r}\) (fig.5):
+Further there can be read off the fall time \(t_{f}\) (\cref{subfig:fig2fallTime}), rise time \(t_{r}\) (\cref{subfig:fig3riseTime}), the pulse width \(t_{p}\)
+(\cref{subfig:fig4pulseWidth}) and recovery time \(t_{r}\) (\cref{subfig:fig5recoveryTime}):
 \begin{align}
 t_{f}   &=  \SI{56}{\micro s} \pm \SI{20}{\micro s} \\
 t_{r}   &=  \SI{228}{\micro s} \pm \SI{20}{\micro s} \\
@@ -25,21 +25,21 @@ t_{re}  &=  \SI{288}{\micro s} \pm \SI{20}{\micro s}
 %
 After determining the starting voltage \(U_{start}\) to \(U_{start}=\SI{328}{V}\), the characteristic curve has been
 recorded. The calculated mean value
-of the count rate has been plotted versus the mean voltage by SciDAVis:\par
+of the count rate has been plotted versus the mean voltage by \textsc{SciDAVis}:\par
 \begin{figure}[H]
  \centering
- \includegraphics[width=.8\textwidth]{scidavis/Fig.6_GMT-characteristics.jpg}
+ \includegraphics[width=.9\textwidth]{scidavis/Fig.6_GMT-characteristics.jpg}
  \caption[GMT characteristic]{Plot characterising the operating GMT.}
  \label{fig:gmtCharacteristics}
 \end{figure}
-The relative slope in the plateau area is determined to \(m=(3,2 \pm 2,8) \frac{\%}{\SI{100}{V}}\) by SciDAVis.\par
+The relative slope in the plateau area is determined to \(m=(3,2 \pm 2,8) \frac{\%}{\SI{100}{V}}\).\par
 The optimum working voltage \(U_{opt}\) is determined to \(U_{opt}=\SI{500}{V}\), since the maximum possible adjustable
 voltage of \(U_{GMT}=\SI{600}{V}\) is still in the plateau area, which starts at \(U_{GMT}=\SI{340}{V}\).
 %
 \section{Angular dependency of the count rate}
 To examine the angular dependency the count rate was measured at the optimum working voltage of
-\(U_{opt}=\SI{500}{V}\) and the mean values of the 12 count rates of each angle were calculated. After that, the count rate was output
-versus angle by SciDAVis:\par
+\(U_{opt}=\SI{500}{V}\) and the mean values of the 12 count rates of each angle were calculated. After that, the count
+rate versus angle was given as:\par
 \begin{figure}[H]
  \centering
  \includegraphics[width=.8\textwidth]{scidavis/Fig.7_Angular dependency of the count rate.jpg}
@@ -62,8 +62,8 @@ For investigating the absorption characteristics of materials, the means of the 
 \end{align}
 %
 The explanation for the different absorption of the different materials is the mass attenuation coefficient of the
-different materials. The mass attenuation coefficient is dependent on the material density \(\rho\) and the attenuation
-coefficient \( \mu \). Since the attenuation coefficient depends on the atomic number, the size of the atom does
+different materials. The mass attenuation coefficient is dependent on the material density and the attenuation
+coefficient. Since the attenuation coefficient depends on the atomic number, the size of the atom does
 matter. The reason why there is happening an attenuation is because of the \(\alpha\)-, \(\beta\)- and \(\gamma\)-rays are
 interacting with the material atoms. While the \(\alpha\)- and \(\beta\)-rays have a strong interaction with the material,
 \(\gamma\)-rays have better penetration due to less likeliness to interact. The smaller the half-value layer of a
@@ -82,14 +82,14 @@ After 90 measurements we obtained the following statistical values for mean \( \
 \sigma^{2}  &=  \SI{4168}{(cps)^{2}} \\
 \sigma      &=  \SI{65}{cps}
 \end{align}
-The measurement series results a scatter plot in SciDAVis:
+The measurement series results in a scatter plot as shown in \cref{fig:countingStatistics}.
 \begin{figure}[H]
  \centering
  \includegraphics[width=.8\textwidth]{scidavis/Fig.8_Counting statistics.jpg}
  \caption[Counting statistics]{Counting statistics.}
  \label{fig:countingStatistics}
 \end{figure}
-A histogram made with SciDAVis shows the distribution of the measures:
+with the associated histogram of distribution as seen in \cref{fig:countStatsHistogram}:
 \begin{figure}[H]
  \centering
  \includegraphics[width=.8\textwidth]{scidavis/Fig.9_Histogram (counting statistics).jpg}
@@ -99,7 +99,7 @@ A histogram made with SciDAVis shows the distribution of the measures:
 With radioactive decay it cannot be said which atom will decay when. Since it is a statistical process, the histogram
 can be described with a Poisson-distribution.
 %
-\section{Background radiation}
+\section{Background radiation}\label{sec:backgroundRadiation}
 %
 To investigate the background radiation the count rate was measured 90 times with no radiation source at a voltage of
 \( U_{opt}=\SI{500}{V} \). The measurement stats are:
@@ -109,17 +109,17 @@ To investigate the background radiation the count rate was measured 90 times wit
 \sigma^{2}  &=  \SI{20}{(cps)^{2}} \\
 \sigma      &=  \SI{4}{cps}
 \end{align}
-The measurement number was plotted versus the count rate by SciDAVis:
+The measurement number was plotted versus the count rate:
 \begin{figure}[H]
  \centering
- \includegraphics[width=.8\textwidth]{scidavis/Fig.10_Background radiation.jpg}
+ \includegraphics[width=.9\textwidth]{scidavis/Fig.10_Background radiation.jpg}
  \caption[Background radiation cps]{Measured counts caused by natural background radiation.}
  \label{fig:backgroundRad}
 \end{figure}
-The associated distribution histogram was drawn by SciDAVis:
+With the associated distribution histogram:
 \begin{figure}[H]
  \centering
- \includegraphics[width=.8\textwidth]{scidavis/Fig.11_Histogram (background radiation).jpg}
+ \includegraphics[width=.9\textwidth]{scidavis/Fig.11_Histogram (background radiation).jpg}
  \caption[Back Rad Hist]{Background Radiation Histogram.}
  \label{fig:backgroundRadHistogram}
 \end{figure}
@@ -128,13 +128,14 @@ statistics.
 %
 \section{Natural radioactivity}
 %
-Last the radioactivity of a package Brazil nuts was determined. The mean value of \( \bar{n}=\SI{3}{cps} \) indicates that the radioactivity of the Brazil nuts is very weak because it
-has the same mean value as the background radiation. However, this does not have to mean that the Brazil nuts do not emit
-any radiation. Because the tube was very close to the nuts, the background radiation could not pass directly through the
-nuts, which implies that the rest of the radiation must have come from the Brazil nuts.
+Lastly, the radioactivity of Brazil Nuts was determined. The mean value of \( \bar{n}=\SI{3}{cps} \) indicates that the
+radioactivity of the Brazil Nuts is very weak because it has the same mean value as the background radiation. However,
+this does not have to mean that the Brazil Nuts do not emit any radiation. Because the tube was very close to the nuts,
+the background radiation could not pass directly through the nuts, which implies that the rest of the radiation must have
+come from the Brazil Nuts.
 \begin{figure}[H]
  \centering
- \includegraphics[width=.8\textwidth]{scidavis/Fig.12_Natural radioactivity.jpg}
+ \includegraphics[width=.9\textwidth]{scidavis/Fig.12_Natural radioactivity.jpg}
  \caption[Brazil Nutz]{Lots of Brazil Nuts.}
  \label{fig:brazilNutz}
 \end{figure}
