@@ -45,8 +45,9 @@ covering the actual ionisation events.
 \begin{figure}[h]
     \centering
     \includegraphics[width=.5\textwidth]{referenzen/gmt_plot.jpg}
-    \caption[Characteristical curve of a GMT]{The characteristical curve of a GM-Tube. At a onset-voltage \(U_S\) the count rate is rapidly rising (plateau area). A certain voltage-range 
-    is considered the working area (plateau). Further increase of the acceleration voltage leads to a second steep rise of counts (continuous discharge) \cite{Eichler.2016}.}
+    \caption[Characteristical curve of a GMT]{The characteristical curve of a GM-Tube. At an onset-voltage \(U_S\) with
+    further rising voltage the count rate is rapidly rising until buckling into a plateau area. This area is considered the
+    working area. Further increase of the acceleration voltage leads to a second steep rise of counts (continuous discharge) \cite{Eichler.2016}.}
 \end{figure}
 %
 %
@@ -61,7 +62,7 @@ trigger ultimately leading to undesired false-negatives i.e. too low count rate 
 Since radioactive decay is a stochastic process, some usefull mathmatic principles need to be discussed.
 \subsection{Binomial Distribution}
 \begin{quote}
-    A random experiment with only \textit{two mutually exclusive} results is called \textit{Bernoulli-experiment}\cite{Papula.MatheFormelsammlung.2017}
+    ''A random experiment with only \textit{two mutually exclusive} results is called \textit{Bernoulli-experiment}''\cite{Papula.MatheFormelsammlung.2017}
 \end{quote}
 Given an event has only two possible outcomes - \(A\) or \(\bar{A}\) - with the individual propabilities \(p(A) = 1 - p(\bar{A})\)
 one can express the propability \(P\) for \(k\) successive events \(A\) within \(i\) repetitions as follows:
